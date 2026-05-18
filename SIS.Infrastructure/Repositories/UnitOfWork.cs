@@ -1,9 +1,6 @@
 ﻿using SIS.Domain;
 using SIS.Domain.Common.Interfaces;
 using SIS.Infrastructure.Persistence.Contexts;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SIS.Infrastructure.Repositories
 {

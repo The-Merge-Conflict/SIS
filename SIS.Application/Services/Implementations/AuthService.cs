@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.Data;
 using SIS.Application.Services.Interfaces;
 using SIS.Domain;
+using LoginRequest = SIS.Application.DTOs.Auth.LoginRequest;
+using RegisterRequest = SIS.Application.DTOs.Auth.RegisterRequest;
 
 namespace SIS.Application.Services.Implementations
 {
@@ -15,14 +18,27 @@ namespace SIS.Application.Services.Implementations
             _signInManager = signInManager;
         }
 
-        public async Task<IdentityResult> RegisterAsync()
+        public async Task<IdentityResult> RegisterAsync(RegisterRequest request)
         {
-            return IdentityResult.Failed(new IdentityError { Description = "Registration not implemented yet." });
+            var user = new ApplicationUser
+            {
+                UserName = request.Email,
+                Email = request.Email,
+                // FullName = request.FullName // Assuming you added this to ApplicationUser
+            };
+
+            return await _userManager.CreateAsync(user, request.Password);
         }
 
-        public async Task<SignInResult> LoginAsync()
+        public async Task<SignInResult> LoginAsync(LoginRequest request)
         {
-            return SignInResult.Failed;
+            // For APIs using Cookies: PasswordSignInAsync handles everything
+            // For APIs using JWT: You would use CheckPasswordAsync here instead
+            return await _signInManager.PasswordSignInAsync(
+                request.Email,
+                request.Password,
+                request.RememberMe,
+                lockoutOnFailure: false);
         }
 
         public async Task LogoutAsync()
@@ -30,5 +46,4 @@ namespace SIS.Application.Services.Implementations
             await _signInManager.SignOutAsync();
         }
     }
-
 }

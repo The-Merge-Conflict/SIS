@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SIS.Domain.Common
+﻿namespace SIS.Domain.Common
 {
     public abstract class BaseEntity
     {

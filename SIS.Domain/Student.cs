@@ -1,21 +1,18 @@
 ﻿using SIS.Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SIS.Domain
 {
-    public class Student : ApplicationUser
+    public class Student : BaseEntity
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string PhoneNumber { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+        public string? PhoneNumber { get; set; }
         public int Age { get; set; }
         public bool IsActive { get; set; }
-        public string StudentNumber { get; set; }
+        public string? StudentNumber { get; set; }
+        public Guid IdentityUserId { get; set; }
 
         // Navigation Property
-        public ICollection<StudentCourse> StudentCourses { get; set; }
+        public ICollection<StudentCourse>? StudentCourses { get; set; }
     }
 }

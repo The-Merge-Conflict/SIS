@@ -1,7 +1,6 @@
 using AutoMapper;
 using SIS.Domain;
 using SIS.Application.DTOs;
-using System.Linq;
 
 namespace SIS.Application.Mapping
 {

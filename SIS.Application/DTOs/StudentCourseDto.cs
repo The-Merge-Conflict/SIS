@@ -2,8 +2,8 @@ namespace SIS.Application.DTOs
 {
     public class StudentCourseDto
     {
-        public int Id { get; set; }
-        public int StudentId { get; set; }
-        public int CourseId { get; set; }
+        public Guid Id { get; set; }
+        public Guid StudentId { get; set; }
+        public Guid CourseId { get; set; }
     }
 }

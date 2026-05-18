@@ -9,8 +9,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="16.1.1" />
     <PackageReference Include="FluentValidation" Version="11.5.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.6" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.6" />
+    <PackageReference Include="MediatR" Version="14.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,5 +18,9 @@
 
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Features\Students\Commands\" />
 	</ItemGroup>
 </Project>
