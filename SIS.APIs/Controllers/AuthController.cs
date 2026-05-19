@@ -19,7 +19,7 @@ namespace SIS.APIs.Controllers
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
             var result = await _authService.RegisterAsync(request);
-            if (!result.Succeeded) return BadRequest(result);
+            if (!result.IsSuccess) return BadRequest(result);
             return Ok(result);
         }
 
@@ -27,7 +27,7 @@ namespace SIS.APIs.Controllers
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             var result = await _authService.LoginAsync(request);
-            if (!result.Succeeded) return Unauthorized(result);
+            if (!result.IsSuccess) return Unauthorized(result);
             return Ok(result);
         }
     }
