@@ -1,7 +1,7 @@
 <Solution>
   <Folder Name="/MicroServices/" />
   <Folder Name="/MicroServices/Logging/">
-    <Project Path="Logging.API/Logging.API.csproj" Id="315566b3-c879-4837-b63c-7f3816c795a0" />
+    <Project Path="Logging.APIs/Logging.APIs.csproj" Id="315566b3-c879-4837-b63c-7f3816c795a0" />
     <Project Path="Logging.Application/Logging.Application.csproj" Id="05e870b9-41d4-4fce-95a2-bd037769ece6" />
     <Project Path="Logging.Domain/Logging.Domain.csproj" Id="8aa1f61d-e5d0-4892-857b-09aa754aa7de" />
     <Project Path="Logging.Infrastructure/Logging.Infrastructure.csproj" Id="4a51e7d4-c493-4e65-b4a7-2ede92a1be19" />
